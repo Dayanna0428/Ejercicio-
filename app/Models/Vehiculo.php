@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Vehiculo extends Model
 {
     use HasFactory;
+    protected $fillable = ['descripcion'];
+
+    public function personas()
+    {
+        return $this->belongsToMany(Persona::class, 'persona_vehiculo');
+    }
 }

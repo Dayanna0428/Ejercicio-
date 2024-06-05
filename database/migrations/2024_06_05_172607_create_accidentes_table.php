@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('accidentes', function (Blueprint $table) {
             $table->id();
+            $table->time('hora');
+            $table->string('codigo');
+            $table->date('fecha');
+            $table->string('lugar');
             $table->timestamps();
         });
     }

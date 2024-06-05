@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Accidente extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['hora', 'codigo', 'fecha', 'lugar'];
+
+    public function personas()
+    {
+        return $this->belongsToMany(Persona::class, 'persona_accidente');
+    }
+    
 }
